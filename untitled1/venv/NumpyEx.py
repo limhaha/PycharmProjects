@@ -23,7 +23,6 @@ overweight_ht = []
 obese_ht = []
 
 
-
 for i in range(100):
     if BMI[i] < 18.5:
         underweight_wt.append(wt[i])
