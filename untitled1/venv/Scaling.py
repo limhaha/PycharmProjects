@@ -13,7 +13,7 @@ df = pd.DataFrame({
 
 np.random.normal(loc=0.0, scale=1.0, size=None)
 
-scaler = preprocessing.RobustScaler()
+scaler = preprocessing.MinMaxScaler()
 scaled_df = scaler.fit_transform(df)
 scaled_df = pd.DataFrame(scaled_df, columns=['x1', 'x2', 'x3'])
 
@@ -23,7 +23,7 @@ ax1.set_title('Before Scaling')
 sns.kdeplot(df['x1'], ax=ax1)
 sns.kdeplot(df['x2'], ax=ax1)
 sns.kdeplot(df['x3'], ax=ax1)
-ax2.set_title('After Robust Scaler')
+ax2.set_title('After MinMax Scaler')
 sns.kdeplot(scaled_df['x1'], ax=ax2)
 sns.kdeplot(scaled_df['x2'], ax=ax2)
 sns.kdeplot(scaled_df['x3'], ax=ax2)
