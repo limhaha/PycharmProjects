@@ -40,27 +40,27 @@ for i in range(100):
         obese_wt.append(wt[i])
         obese_ht.append(ht[i]/100)
 
-# Boxplot
-plotData_wt = [underweight_wt, healthy_wt, overweight_wt, obese_wt]
-plt.xlabel('BMI status')
-plt.ylabel('Weight (kg)')
-plt.boxplot(plotData_wt, labels=["underweight", "healthy", "overweight", "obese"])
-plt.show()
-
-plotData_wt = [underweight_ht, healthy_ht, overweight_ht, obese_ht]
-plt.xlabel('BMI status')
-plt.ylabel('Height (m)')
-plt.boxplot(plotData_wt, labels=["underweight", "healthy", "overweight", "obese"])
-plt.show()
-
-
-# Bar chart
-dist = ["underweight", "healthy", "overweight", "obese"]
-bmi = [len(underweight_ht), len(healthy_ht), len(overweight_ht), len(obese_ht)]
-plt.bar(dist, bmi)
-plt.xlabel('BMI status')
-plt.ylabel('Number of student')
-plt.show()
+# # Boxplot
+# plotData_wt = [underweight_wt, healthy_wt, overweight_wt, obese_wt]
+# plt.xlabel('BMI status')
+# plt.ylabel('Weight (kg)')
+# plt.boxplot(plotData_wt, labels=["underweight", "healthy", "overweight", "obese"])
+# plt.show()
+#
+# plotData_wt = [underweight_ht, healthy_ht, overweight_ht, obese_ht]
+# plt.xlabel('BMI status')
+# plt.ylabel('Height (m)')
+# plt.boxplot(plotData_wt, labels=["underweight", "healthy", "overweight", "obese"])
+# plt.show()
+#
+#
+# # Bar chart
+# dist = ["underweight", "healthy", "overweight", "obese"]
+# bmi = [len(underweight_ht), len(healthy_ht), len(overweight_ht), len(obese_ht)]
+# plt.bar(dist, bmi)
+# plt.xlabel('BMI status')
+# plt.ylabel('Number of student')
+# plt.show()
 
 
 # Histogram
@@ -89,13 +89,13 @@ plt.ylabel('Number of student')
 plt.show()
 
 
-# Pie chart
-plt.pie(bmi, labels=dist, autopct='%1.2f%%')
-plt.show()
-
-
-# Scatter plot
-plt.scatter(wt, ht/100, color='r')
-plt.xlabel('Weight (kg)')
-plt.ylabel('Height (m)')
-plt.show()
+# # Pie chart
+# plt.pie(bmi, labels=dist, autopct='%1.2f%%')
+# plt.show()
+#
+#
+# # Scatter plot
+# plt.scatter(wt, ht/100, color='r')
+# plt.xlabel('Weight (kg)')
+# plt.ylabel('Height (m)')
+# plt.show()
