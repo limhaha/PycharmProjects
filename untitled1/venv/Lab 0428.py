@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn import preprocessing
+from sklearn import linear_model
 
 df = pd.read_csv('/Users/halim/Downloads/bmi_data_lab3.csv')
 
@@ -69,9 +70,69 @@ print(df_normal['Height (Inches)'])
 # plt.ylabel('Number of student')
 # plt.show()
 
-ht_wt = {'height' : df['Height (Inches)'], 'weight' : df['Weight (Pounds)']}
-ht_wt_df = pd.DataFrame(ht_wt)
 
-standard_scaler = preprocessing.StandardScaler()
-standard_scaler.fit(ht_wt_df)
-standard_scaler.transform(ht_wt_df)
+
+# ht_wt = {'height' : df['Height (Inches)'], 'weight' : df['Weight (Pounds)']}
+# ht_wt_df = pd.DataFrame(ht_wt)
+#
+# standard_scaler = preprocessing.StandardScaler()
+# standard_scaler.fit(ht_wt_df)
+# standard_scaler.transform(ht_wt_df)
+#
+# fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(6, 5))
+#
+# ax1.set_title('Before Scaling')
+# sns.kdeplot(ht_wt_df)
+#
+# ax2.set_title('After MinMax Scaler')
+# sns.kdeplot(ht_wt_df)
+#
+# plt.show()
+
+nan_df = pd.read_csv('/Users/halim/Downloads/bmi_data_lab3_clean.csv')
+
+print("\nNumber of NAN for each coulumn")
+print('Sex : ', nan_df['Sex'].isnull().sum())
+print('Age : ', nan_df['Age'].isnull().sum())
+print('Height : ', nan_df['Height (Inches)'].isnull().sum())
+print('Weight : ', nan_df['Weight (Pounds)'].isnull().sum())
+print('BMI : ', nan_df['BMI'].isnull().sum())
+
+
+print('\nNumber of rows with NAN')
+row_nan = nan_df.isnull().sum(1)
+print(row_nan.sum(axis=0))
+
+print("\nExtract all rows without NAN")
+print(nan_df.dropna(axis=0))
+
+# print('<fillna with mean function>\n')
+# print(nan_df.fillna(df.mean()))
+# print('\n')
+#
+#
+# print('<fillna with median function>\n')
+# print(nan_df.fillna(df.median()))
+# print('\n')
+#
+#
+# print('<fillna with ffill function>\n')
+# print(nan_df.fillna(method='ffill'))
+# print('\n')
+#
+#
+# print('<fillna with bfill function>\n')
+# print(nan_df.fillna(method='bfill'))
+# print('\n')
+#
+
+nan_df.head()
+height = nan_df['Height (Inches)'].values
+weight = nan_df['Weight (Pounds)'].values
+reg = linear_model.LinearRegression()
+reg.fit(height[:, np.newaxis], weight)
+
+
+
+
+
