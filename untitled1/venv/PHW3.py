@@ -9,9 +9,9 @@ df = pd.read_excel('bmi_data_phw3.xlsx')
 
 #Print dataset statistical data, feature names & data types
 
-print(df)
-
-print(df.info())
+# print(df)
+#
+# print(df.info())
 
 bit_mask0 = df['BMI'] == 0
 df_eweak = df[bit_mask0]
