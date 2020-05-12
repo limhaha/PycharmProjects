@@ -28,6 +28,7 @@ df_overweight = df[bit_mask3]
 bit_mask4 = df['BMI'] == 4
 df_obesity = df[bit_mask4]
 
+
 # Plot height & weight histograms (bins=10) for each BMI value
 # Using matplotlib.pyplot.subplots
 fig, (ax0, ax1, ax2) = plt.subplots(1, 3)
